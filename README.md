@@ -21,7 +21,7 @@ Create a Hangman-Game with a custom theme.
 
 -After the user wins/loses the game should automatically choose another word and make the user play it.
 
-Hangman Game Bonuses:
+*Hangman Game Bonuses:*
 
 -Play a sound or song when the user guesses their word correctly, like in our demo.
 
