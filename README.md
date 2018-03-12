@@ -4,7 +4,7 @@ Create a Hangman-Game with a custom theme.
 
 -Use key events to listen for the letters that your players will type.
 
--Display the following on the page:
+*Display the following on the page*
 
 -Press any key to get started!
 
@@ -22,10 +22,17 @@ Create a Hangman-Game with a custom theme.
 -After the user wins/loses the game should automatically choose another word and make the user play it.
 
 Hangman Game Bonuses:
+
 -Play a sound or song when the user guesses their word correctly, like in our demo.
+
 -Write some stylish CSS rules to make a design that fits your game's theme.
+
 -HARD MODE: Organize your game code as an object, except for the key events to get the letter guessed. This will be a challenge if you haven't coded with JavaScript before, but we encourage anyone already familiar with the language to try this out.
+
 -Save your whole game and its properties in an object.
+
 -Save any of your game's functions as methods, and call them underneath your object declaration using event listeners.
+
 -Don't forget to place your global variables and functions above your object.
+
 -Remember: global variables, then objects, then calls.
