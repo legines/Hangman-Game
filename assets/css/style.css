@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+/* SETS FONT AND COLOR FOR BODY */
+body {
+	background: url("../images/darkd.png") repeat;
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+  color: white;
+}
+
+/* IMAGE STYLING */
+#logo {
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+/* CENTERS MAIN CONTENT AND STYLES */
+.main_content {
+	height: 75%;
+	width: 55%;
+	border: 2px solid white;
+	margin: 10px;
+	text-align: center;
+	margin-left: 23%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+p {
+	padding-bottom: 15px;
+}

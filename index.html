@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hangman: Fast and Furious Edition</title>
+  <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
+<body>
+
+  <div>
+    <header><img id="logo" src="assets/images/logo.png" alt="Too Fast Hangman"></header>
+  </div>
+    
+  <div class="main_content">
+    <div>
+      <audio id="music" controls>
+          <source src="assets/images/starwars-audio.mp3">
+      </audio>
+    </div>
+    <section>
+      <p>
+        PRESS ANY KEY TO GET STARTED!
+      </p>
+      <p>
+        WINS
+      </p>
+      <p id="counter">
+      </p>
+      <p>
+        CURRENT WORD
+      </p>
+      <p id="current_word">
+      </p>
+      <p>
+        NUMBER OF GUESSES REMAINING
+      </p>
+      <p id="guess_left">
+      </p>
+      <p>
+        LETTERS ALREADY GUESSED
+      </p>
+      <p id="letters_guessed">
+      </p>
+    </section>
+  </div>
+
+  <script type="text/javascript" src="./assets/javascript/game.js"></script>
+  
+</body>
+</html>
