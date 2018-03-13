@@ -45,7 +45,7 @@ randoWord(wordArray);
 
 //USER INPUT LOGIC
 document.onkeyup = function(event) {
-	console.log('This is the key entered', event.key);
+	console.log('Key entered is ', event.key);
 	var keyPress;
 
 	if (typeof event != 'undefined') {
@@ -85,16 +85,6 @@ function userGuesses(userGuess) {
 		}
 	}
 
-	//PUSH GUSSED LETTERS ONTO DOM
-	lettersGuessed.push(userGuess);
-	console.log("LettersGuessed array item: " + lettersGuessed[0]);
-	
-	//ADDS A SPACE BETWEEN EACH GUESSED LETTER
-	var lettersGuessedString = lettersGuessed.join(", ");
-	document.getElementById("letters_guessed").innerHTML = lettersGuessedString;
-
-	guessesLeft--;
-
 	//SHOWS GUESSES LEFT
 	document.getElementById("guess_left").innerHTML = guessesLeft;
 	console.log("Guesses left " + guessesLeft);
@@ -102,6 +92,16 @@ function userGuesses(userGuess) {
 	if (guessesLeft == 0) {
 		restart();
 	}
+
+	//PUSH GUSSED LETTERS ONTO DOM
+	lettersGuessed.push(userGuess);
+	console.log("Letters Guessed array now contains: " + lettersGuessed[0]);
+	
+	//ADDS A SPACE BETWEEN EACH GUESSED LETTER
+	var lettersGuessedString = lettersGuessed.join(", ");
+	document.getElementById("letters_guessed").innerHTML = lettersGuessedString;
+
+	guessesLeft--;
 
 	return lettersGuessedString;
 };
@@ -119,9 +119,8 @@ function guessShow(userGuess) {
 
 	//REPLACES UNDERSCORES WITH CORRECT GUESS
 	for (var i = 0; i < word.length; i++) {
-	  console.log('Word is ' + word);
+	  console.log('Current word is ' + word);
 	  if (userGuess == word[i]) {
-	  	console.log(userGuess + " is in word at " + i);
 	  	currentArray[i] = userGuess;
 	  }
 	}
@@ -132,9 +131,10 @@ function guessShow(userGuess) {
 	placeholder = currentArray.join(" ");
 	document.getElementById("current_word").innerHTML = placeholder;
 
-	console.log("Placeholder Array length is " + currentArray.length);
-	console.log("Placeholder split is " + placeholder.split(","));
-	console.log("Word join is " + word.join(" "));
+	console.log("Current word length is " + currentArray.length);
+	console.log("Current word split is " + placeholder.split(","));
+	console.log("Current word joined is " + word.join(" "));
+	console.log("==================================================");
 	
 	//WIN CONDITIONS
 	if (placeholder.split(',') == word.join(" ")) {
@@ -145,6 +145,7 @@ function guessShow(userGuess) {
 	}
 };
 
+//AUDIO
 function playAudio() { 
 	var vid = document.getElementById("win_music"); 
   vid.play(); 
