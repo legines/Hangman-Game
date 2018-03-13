@@ -53,7 +53,8 @@ document.onkeyup = function(event) {
 		// UPPERCARE userGuess AND CALLS FUNCTIONS
 		userGuess = String.fromCharCode(keyPress).toUpperCase();
 		userGuesses(userGuess);
-		guessShow(userGuess);
+    pauseAudio();
+    guessShow(userGuess);
 	}
 };
 
@@ -137,11 +138,22 @@ function guessShow(userGuess) {
 	
 	//WIN CONDITIONS
 	if (placeholder.split(',') == word.join(" ")) {
-		wins++;
+    wins++;
+    playAudio();
 		document.getElementById("counter").innerHTML = wins;
 		restart();
 	}
 };
+
+function playAudio() { 
+	var vid = document.getElementById("win_music"); 
+  vid.play(); 
+}
+
+function pauseAudio() { 
+	var vid = document.getElementById("win_music"); 
+  vid.pause(); 
+}
 
 //RESTART FUNCTION
 function restart(scoredArray) {
