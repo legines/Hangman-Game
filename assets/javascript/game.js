@@ -11,7 +11,7 @@ var guessesLeft = 13;
 
 // wins = win counter set to 0
 // currentArray = empty array used to store current word
-// correctArray = empty array that stores the correct guesses and is displayed      to the DOM
+// correctArray = empty array that stores the correct guesses and is displayed to the DOM
 // scoredArray = empty array used to convert current word into underscores
 // lettersGuessed = empty array used to store letters already guessed
 // word = empty array that stores the random curret word 
