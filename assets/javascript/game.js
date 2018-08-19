@@ -41,7 +41,7 @@ var tooFastWords = {
 var wordArray = [tooFastWords.word1, tooFastWords.word2, tooFastWords.word3, tooFastWords.word4, tooFastWords.word5, tooFastWords.word6, tooFastWords.word7, tooFastWords.word8, tooFastWords.word9, tooFastWords.word10, tooFastWords.word11, tooFastWords.word12];
 
 //STARTS GAME
-randoWord(wordArray);
+start();
 
 //USER INPUT LOGIC
 document.onkeyup = function(event) {
@@ -84,7 +84,7 @@ function userGuesses(userGuess) {
 			return;
 		}
 	}
-
+	guessesLeft--;
 	//SHOWS GUESSES LEFT
 	document.getElementById("guess_left").innerHTML = guessesLeft;
 	console.log("Guesses left " + guessesLeft);
@@ -101,7 +101,7 @@ function userGuesses(userGuess) {
 	var lettersGuessedString = lettersGuessed.join(", ");
 	document.getElementById("letters_guessed").innerHTML = lettersGuessedString;
 
-	guessesLeft--;
+	
 
 	return lettersGuessedString;
 };
@@ -172,4 +172,18 @@ function restart(scoredArray) {
 	document.getElementById("guess_left").innerHTML = guessesLeft;
 	lettersGuessed = [];
 	document.getElementById("letters_guessed").innerHTML = lettersGuessed;
+};
+
+function start(scoredArray) {
+	
+	//CHOOSES NEW WORD
+	randoWord(wordArray);
+
+	//RESETS ALL INPUTS AND GUESSES
+	wins = 0
+	guessesLeft = 13;
+
+	//RESETS ALL COUNTERS
+	document.getElementById("guess_left").innerHTML = guessesLeft;
+	document.getElementById("counter").innerHTML = wins;
 };

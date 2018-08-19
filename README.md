@@ -2,7 +2,7 @@
 
 [Click me to play Hangman!](https://legines.github.io/Hangman-Game/.)
 
-1. Created a Hangman-Game with a custom theme. 
+1. Created a Hangman-Game in JavaScript with a custom theme. 
 
     * Used key events to listen for the letters that players will type.
 
