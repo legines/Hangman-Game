@@ -53,7 +53,7 @@ document.onkeyup = function(event) {
 		// UPPERCARE userGuess AND CALLS FUNCTIONS
 		userGuess = String.fromCharCode(keyPress).toUpperCase();
 		userGuesses(userGuess);
-    pauseAudio();
+		pauseAudio();
     guessShow(userGuess);
 	}
 };
@@ -85,25 +85,25 @@ function userGuesses(userGuess) {
 		}
 	}
 	guessesLeft--;
+	
 	//SHOWS GUESSES LEFT
 	document.getElementById("guess_left").innerHTML = guessesLeft;
 	console.log("Guesses left " + guessesLeft);
 
+	//PUSH GUSSED LETTERS ONTO DOM
+	lettersGuessed.push(userGuess);
+	console.log("Letters Guessed array now contains: " + lettersGuessed[i]);
+	
 	if (guessesLeft == 0) {
+		playLoseAudio();
 		restart();
 	}
 
-	//PUSH GUSSED LETTERS ONTO DOM
-	lettersGuessed.push(userGuess);
-	console.log("Letters Guessed array now contains: " + lettersGuessed[0]);
-	
 	//ADDS A SPACE BETWEEN EACH GUESSED LETTER
 	var lettersGuessedString = lettersGuessed.join(", ");
 	document.getElementById("letters_guessed").innerHTML = lettersGuessedString;
 
-	
-
-	return lettersGuessedString;
+	return lettersGuessedString;	
 };
 
 //FUNCTION TO DISPLAYS GUESSED LETTERS 
@@ -139,25 +139,35 @@ function guessShow(userGuess) {
 	//WIN CONDITIONS
 	if (placeholder.split(',') == word.join(" ")) {
     wins++;
-    playAudio();
+    playAudioWin();
 		document.getElementById("counter").innerHTML = wins;
 		restart();
 	}
 };
 
 //AUDIO
-function playAudio() { 
-	var vid = document.getElementById("win_music"); 
-  vid.play(); 
+function playAudioWin() { 
+	var winMusic = document.getElementById("win_music"); 
+  winMusic.play(); 
+}
+
+function playLoseAudio() {
+	var loseMusic = document.getElementById("lose_music");
+	loseMusic.play();
+}
+
+function pauseLoseAudio() {
+	var loseMusic = document.getElementById("lose_music");
+	loseMusic.pause();
 }
 
 function pauseAudio() { 
-	var vid = document.getElementById("win_music"); 
-  vid.pause(); 
+	var winMusic = document.getElementById("win_music"); 
+	winMusic.pause(); 
 }
 
 //RESTART FUNCTION
-function restart(scoredArray) {
+function restart() {
 	
 	//CHOOSES NEW WORD
 	randoWord(wordArray);
@@ -174,7 +184,7 @@ function restart(scoredArray) {
 	document.getElementById("letters_guessed").innerHTML = lettersGuessed;
 };
 
-function start(scoredArray) {
+function start() {
 	
 	//CHOOSES NEW WORD
 	randoWord(wordArray);
